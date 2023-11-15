@@ -1,2 +1,2 @@
 # hamelyz.github.io
-Personal site
+Personal site @ http://hamelyz.github.io/

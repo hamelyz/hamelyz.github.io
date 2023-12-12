@@ -27,6 +27,7 @@ function initTyping() {
     let characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
     if(charIndex < characters.length - 1 && timeLeft > 0) {
+        // Before you finish typing
         if(!isTyping) {
             timer = setInterval(initTimer, 1000);
             isTyping = true;
@@ -58,6 +59,8 @@ function initTyping() {
         mistakeTag.innerText = mistakes;
         cpmTag.innerText = charIndex - mistakes;
     } else {
+        // After you finish typing  
+        alert("Game over! Your score is " + wpmTag.innerText + " WPM");
         clearInterval(timer);
         inpField.value = "";
     }   

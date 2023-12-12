@@ -18,7 +18,8 @@ body{
   color: #fff;
   background: #17A2B8;
 }
-.wrapper{
+.wrapper,
+.modal-body{
   width: 770px;
   padding: 35px;
   background: #fff;
@@ -181,4 +182,11 @@ li:not(:first-child) span{
   .content button{
     margin-top: 10px;
   }
+}
+
+/* Additions */
+
+ul.result-details>li.time>p {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

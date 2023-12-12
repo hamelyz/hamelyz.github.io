@@ -1,0 +1,51 @@
+/* .btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+} */
+
+body .masthead {
+    background-color: black;
+    background: #000000;
+    background: url("../assets/img/national-cancer-institute-zz_3tCcrk7o-unsplash-downsampled-max-small.jpg");
+}
+
+.masthead a.down-button {
+    width: 3rem;
+    height: 3rem;
+}
+.masthead a>.masthead-icon {
+    /* padding: 0; */
+    /* margin: 0; */
+    /* max-width: 100%; */
+    width: 100%;
+    /* max-height: 100%; */
+    height: 100%;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    
+    display: inline-block;
+    text-align:center;
+    /* opacity: var(--bs-bg-opacity); */
+}
+
+#socials .service-icon:hover {
+    font-size: 2.5rem;
+    /* color: black; */
+    font-weight: 900;
+    transition: .1s ease-out;
+}

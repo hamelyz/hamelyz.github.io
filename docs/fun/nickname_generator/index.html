@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Danielle Nickname Generator</title>
+    <style>
+        body {
+            background-color: #008080;
+            font-family: "Comic Sans MS", cursive;
+            text-align: center;
+            margin: 50px;
+        }
+        
+        h1 {
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF00FF;
+            font-size: 48px;
+        }
+        h2 {
+            color: #FFFF00;
+            text-shadow: 2px 2px #FF00FF;
+            font-size: 32px;
+        }
+        
+        .container {
+            background-color: #C0C0C0;
+            border: 5px ridge #808080;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        #nickname-box {
+            background-color: #FFFFFF;
+            border: 3px inset #000000;
+            padding: 30px;
+            margin: 20px 0;
+            min-height: 100px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF0000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #nickname-box.spinning {
+            animation: blink 0.1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { background-color: #FFFFFF; }
+            50% { background-color: #FFFFFF; }
+        }
+        
+        button {
+            background-color: #FF00FF;
+            color: #FFFF00;
+            font-family: "Comic Sans MS", cursive;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px 40px;
+            border: 4px outset #FF00FF;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        button:active:not(:disabled) {
+            border-style: inset;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: wait;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #FFFF00;
+            font-size: 14px;
+        }
+        
+        hr {
+            border: 2px solid #FF00FF;
+        }
+    </style>
+</head>
+<body>
+    <h1>~* DANIELLE NICKNAME GENERATOR *~</h1>
+<h2>(A.K.A. So Danielle closed another deal)</h2>
+    
+    <div class="container">
+        <marquee behavior="alternate" style="color: #0000FF; font-size: 18px;">
+            ✨ Welcome! ✨
+        </marquee>
+        
+        <hr>
+        
+        <div id="nickname-box">
+            <span id="nickname-text">Click the button!</span>
+        </div>
+        
+        <button id="spin-btn" onclick="spinChamber()">
+            🎲 SPIN THE CHAMBER 🎲
+        </button>
+        
+        <hr>
+        
+        <div class="footer">
+            <blink>*** LOADING... PLEASE WAIT 5 SECONDS ***</blink>
+        </div>
+    </div>
+    
+    <script>
+        var nicknames = [
+            "Danielle Shoback-to-Business",
+            "Danielle Shoback-with-a-Vengeance",
+            "Danielle Shoback-on-Top",
+            "Danielle Shoback-in-Charge",
+            "Danielle Shoback-at-It",
+            "Danielle Shoback-to-Back",
+            "Danielle Shoback-in-Action",
+            "Danielle Shoback-to-Winning",
+            "Danielle Shoback-in-the-Game",
+            "Danielle Shoback-to-Form",
+            "Danielle Shoback-Against-the-Wall",
+            "Danielle Sho-Nuff",
+            "Danielle Sho-No-Mercy",
+            "Danielle Sho-Stopper",
+            "Danielle Sho-Me-the-Money",
+            "Danielle Sho-Time",
+            "Danielle Sho-Down",
+            "Danielle Sho-Boat",
+            "Danielle Sho-Off",
+            "Danielle Sho-Case",
+            "Danielle Sho-Runner",
+            "Danielle Sho-Of-Strength",
+            "Danielle Sho-Biz",
+            "Danielle Sho-Up",
+            "Danielle Sho-Out",
+            "Danielle Sho-Sure",
+            "Danielle Sho-Thing",
+            "Danielle Sho-Far-So-Good",
+            "Danielle Sho-Gun-It"
+        ];
+        
+        function spinChamber() {
+            var display = document.getElementById("nickname-text");
+            var box = document.getElementById("nickname-box");
+            var button = document.getElementById("spin-btn");
+            
+            button.disabled = true;
+            box.classList.add("spinning");
+            
+            display.innerHTML = "*** SPINNING ***";
+            
+            var counter = 0;
+            var interval = setInterval(function() {
+                display.innerHTML = nicknames[Math.floor(Math.random() * nicknames.length)];
+                counter++;
+            }, 150);
+            
+            setTimeout(function() {
+                clearInterval(interval);
+                
+                var finalNickname = nicknames[Math.floor(Math.random() * nicknames.length)];
+                
+                box.classList.remove("spinning");
+                
+                setTimeout(function() {
+                    display.innerHTML = finalNickname;
+                    button.disabled = false;
+                }, 300);
+                
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
